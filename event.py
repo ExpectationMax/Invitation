@@ -1,14 +1,15 @@
+from datetime import date
 
 thisevent = Event()
 
 thisevent.title = "Strange german word with exclamation mark"
 thisevent.description = "Much text"
 
-thisevent.creator = Person("Max Horn", date(2016,7,16))
-thisevent.trigger = lambda creator: ((creator.days_since_birth % 365.25) < 1)
+thisevent.creator = Person("Max Horn", date(1993, 7, 16))
+thisevent.trigger = lambda creator: ((creator.days_since_birth % 365.25) < 1 and creator.days_since_birth > 0)
 
 # For christoph
-thisevent.eventtype = "Party"
+thisevent.event_type = "Party"
 
 # check weather conditions
 if weather == "Sunny" or weather == "Nice" or weather == "Awesome":
